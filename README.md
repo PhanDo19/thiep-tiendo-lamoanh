@@ -31,13 +31,23 @@ wedding/
 
 ## 📅 Thông tin sự kiện
 
-**Chủ Nhật, 19.09.2026** (Tức Ngày 9 Tháng 8 Năm Bính Ngọ)
+Có **hai** sự kiện. Lễ Thành Hôn giống nhau ở cả hai trang; tiệc mời cỗ khác
+giờ và khác địa điểm.
+
+### Lễ Thành Hôn — cả hai trang giống nhau
+**Chủ Nhật, 11h00, 20.09.2026** (Tức Ngày 10 Tháng 8 Năm Bính Ngọ)
+Gia đình nhà trai — Xóm Trung, Thôn Quang Trung, Xã Tân Minh, Tỉnh Ninh Bình
+
+### Tiệc mời cỗ — khác nhau
+**Thứ Bảy, 19.09.2026** (Tức Ngày 9 Tháng 8 Năm Bính Ngọ)
 
 | | Nhà Trai (`index.html`) | Nhà Gái (`nhagai.html`) |
 |---|---|---|
-| Lễ | Thành Hôn | Vu Quy |
 | Giờ | 17h00 | 16h00 |
-| Địa điểm | Xóm Trung - Thôn Quang Trung<br>Xã Tân Minh - Tỉnh Ninh Bình | Thôn Bình Hạ - Xã Phong Doanh<br>Tỉnh Ninh Bình |
+| Địa điểm | Gia đình nhà trai<br>Xóm Trung - Thôn Quang Trung<br>Xã Tân Minh - Tỉnh Ninh Bình | Gia đình nhà gái<br>Thôn Bình Hạ - Xã Phong Doanh<br>Tỉnh Ninh Bình |
+
+> Tấm thiệp đầu trang hiện ngày **lễ chính 20/09**. Cả hai mốc ghi đầy đủ ở
+> khối "Xác nhận tham dự" bên dưới.
 
 ## ⚠️ Việc còn phải làm
 
@@ -72,7 +82,10 @@ Trong **cả hai file**, tìm `class="thiep_map"` và thay `href="#"`:
 ```
 
 Lấy link: mở Google Maps → tìm địa chỉ → **Chia sẻ** → **Sao chép liên kết**.
-Hai file dùng **hai link khác nhau** (nhà trai / nhà gái).
+
+Nút bản đồ trên thiệp trỏ tới nơi tổ chức **Lễ Thành Hôn** (nhà trai) nên
+**cả hai file dùng chung một link**. Nếu muốn thêm đường dẫn tới nhà gái cho
+khách đi tiệc 19/09, bảo tôi thêm nút thứ hai vào khối sự kiện.
 
 ### 3. Số tài khoản
 Chú rể đã xong (`0886505360` — VietinBank, PHAN TIEN DO). Cô dâu xem mục 1.
@@ -142,7 +155,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=23.0` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=24.0` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 

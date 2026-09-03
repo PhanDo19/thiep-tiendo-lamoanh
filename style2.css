@@ -151,6 +151,42 @@ animation: flash-shadow 2s infinite;
     margin-top: 8px;
 }
 
+/* Hai su kien: le thanh hon + tiec moi co ............................ */
+.cf_event {
+    margin-top: 0 !important;
+}
+
+.cf_event > div {
+    margin-top: 6px;
+}
+
+.cf_sep {
+    height: 1px;
+    width: 72%;
+    margin: 24px auto !important;
+    background: linear-gradient(to right,
+        transparent, rgba(0, 21, 8, .35), transparent);
+}
+
+.cf_place {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10px !important;
+    color: #40544c;
+}
+
+.cf_place_name {
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: .4px;
+}
+
+.cf_place_addr {
+    font-size: 12.5px;
+    line-height: 18px;
+}
+
 .cf_desc1 {
     font-weight: bold;
     text-transform: uppercase;
@@ -175,7 +211,11 @@ animation: flash-shadow 2s infinite;
     color: #555;
     font-size: 13.5px;
     font-style: italic;
-    margin-bottom: 24px;
+}
+
+.cf_event + .cf_btn,
+.cf_sep + .cf_event + .cf_btn {
+    margin-top: 26px;
 }
 
 .cf_btn {
