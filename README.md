@@ -74,18 +74,18 @@ Còn thiếu `source/qr-codau.jpg`. Lấy ảnh QR như sau:
 Nếu app không có sẵn ảnh QR, tạo tại [vietqr.io](https://vietqr.io): chọn ngân
 hàng, nhập số tài khoản và tên chủ tài khoản, tải ảnh về.
 
-### 2. Link Google Maps
-Trong **cả hai file**, tìm `class="thiep_map"` và thay `href="#"`:
+### 2. ~~Link Google Maps~~ ✅ Đã xong
 
-```html
-<a class="thiep_map" href="https://maps.app.goo.gl/XXXX" target="_blank" rel="noopener noreferrer">
-```
+| Nơi | Toạ độ |
+|---|---|
+| Nhà trai | `20.4243289, 105.9768309` |
+| Nhà gái | `20.3812027, 105.9302444` |
 
-Lấy link: mở Google Maps → tìm địa chỉ → **Chia sẻ** → **Sao chép liên kết**.
+Link dùng dạng chỉ đường (`maps/dir/?api=1&destination=...`) nên khách bấm là
+Google Maps dẫn đường luôn từ vị trí của họ.
 
-Nút bản đồ trên thiệp trỏ tới nơi tổ chức **Lễ Thành Hôn** (nhà trai) nên
-**cả hai file dùng chung một link**. Nếu muốn thêm đường dẫn tới nhà gái cho
-khách đi tiệc 19/09, bảo tôi thêm nút thứ hai vào khối sự kiện.
+Nút bản đồ có ở 3 chỗ mỗi trang: nút tròn trên thiệp (trỏ nhà trai — nơi tổ
+chức Lễ Thành Hôn) và nút "📍 Xem đường đi" trong từng khối sự kiện.
 
 ### 3. Số tài khoản
 Chú rể đã xong (`0886505360` — VietinBank, PHAN TIEN DO). Cô dâu xem mục 1.
@@ -155,7 +155,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=24.0` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=25.0` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 
