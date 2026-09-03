@@ -106,12 +106,12 @@ hiện ảnh khi share.
 
 ## 🌐 Deploy lên GitHub Pages
 
-Website: **https://hoangnv25.github.io/thiep-tiendo-lamoanh/**
+Website: **https://phando19.github.io/thiep-tiendo-lamoanh/**
 
 | Trang | Link gửi khách |
 |---|---|
-| Nhà trai | https://hoangnv25.github.io/thiep-tiendo-lamoanh/ |
-| Nhà gái | https://hoangnv25.github.io/thiep-tiendo-lamoanh/nhagai.html |
+| Nhà trai | https://phando19.github.io/thiep-tiendo-lamoanh/ |
+| Nhà gái | https://phando19.github.io/thiep-tiendo-lamoanh/nhagai.html |
 
 ### Bật GitHub Pages (làm 1 lần)
 
@@ -132,7 +132,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=21.0` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=22.0` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 

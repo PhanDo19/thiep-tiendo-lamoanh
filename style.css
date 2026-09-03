@@ -75,6 +75,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* chan vuot ngang khi cac phan tu con o trang thai truoc animation */
+    overflow-x: hidden;
 }
 
 .thiep {
@@ -116,8 +118,8 @@ body {
 
 .thiep_blur-bg {
     position: relative;
-    width: 92%;
-    margin: 4%;
+    width: 88%;
+    margin: 6% 4%;
     border-radius: 20px;
     background: #7d7d7d45;
     -webkit-backdrop-filter: blur(2px);
@@ -136,16 +138,17 @@ body {
 }
 
 .thiep_des {
-    margin: 18px;
-    margin-bottom: 24px;
-    font-size: 30px;
+    margin: 22px 18px 20px;
+    font-size: clamp(28px, 8vw, 34px);
     color: #ffffff;
     opacity: 0.9;
 }
 
 .thiep_name {
-    margin: 36px 0;
-    font-size: 36px;
+    margin: 28px 0 32px;
+    font-size: clamp(30px, 8.4vw, 40px);
+    line-height: 1.28;
+    letter-spacing: 1px;
 }
 
 .thiep_name > p {
@@ -154,12 +157,14 @@ body {
 }
 
 .thiep_small {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 2px 0;
+    opacity: .85;
 }
 
 /* Phần 2....................................................... */
 .thiep_date_box {
-    margin-top: 36px;
+    margin-top: 30px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -219,14 +224,14 @@ body {
 }
 
 .thiep_main_date {
-    font-size: 48px;
+    font-size: clamp(44px, 12vw, 54px);
     font-weight: bold;
     padding: 0 10px;
-    line-height: 40px;
+    line-height: 1;
 }
 
 .thiep_month_year {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 16px;
     letter-spacing: 1px;
 }
@@ -237,7 +242,8 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 18px;
+    margin-top: 26px;
+    padding: 0 16px;
 }
 
 .add_fancy {
@@ -245,19 +251,20 @@ body {
 }
 
 .add_big {
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: 12px;
-    font-size: 16px;
+    font-size: 17px;
+    letter-spacing: 1px;
 }
 
 .add_small {
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 13.5px;
+    line-height: 21px;
     letter-spacing: 0.5px;
 }
 
 .hr-add {
-    margin-top: 18px;
+    margin-top: 22px;
     height: 1px;
     background-color: white;
     width: 200px; /* giống hr-wrapper */
@@ -268,7 +275,7 @@ body {
 
 .thiep_all_icon {
     display: block;
-    margin: 16px 0;
+    margin: 20px 0 24px;
 }
 
 .thiep_map {
@@ -295,7 +302,8 @@ body {
 
 /* Giới thiệu */
 .gt_container {
-    margin-top: 32px;
+    width: 100%;
+    margin-top: 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,27 +311,30 @@ body {
 }
 
 .gt_des {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a7250;
+    margin-bottom: 6px;
 }
 
 .gt_des2 {
     text-transform: uppercase;
     font-weight: 500 !important;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
+    font-size: clamp(21px, 6vw, 26px);
+    letter-spacing: 1px;
+    margin-bottom: 28px;
     color: #712f00;
-    
 }
 
 .gt_img {
     position: relative;
-    width: 90%;
-    aspect-ratio: 1 / 1; /* cắt vuông */
+    width: 88%;
+    aspect-ratio: 4 / 5; /* khung dọc, hợp ảnh chân dung */
     overflow: hidden;
     border-radius: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(113, 47, 0, .10);
 }
 
 .gt_img img {

@@ -1,32 +1,45 @@
 .moi_container {
-    margin-top: 32px;
+    width: 100%;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #00240e;
 }
 
 .moi_desc1 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 4px;
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 8px;
 }
 
 .moi_desc2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 1.7;
+    padding: 0 24px;
+    color: #4a5c50;
 }
 
 .moi_img {
-    margin: 24px 0;
+    width: 100%;
+    margin: 30px 0 8px;
+    padding: 0 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2%;
+    gap: 2.5%;
 }
 
 .img_big {
-    height: auto;
     width: 36%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
     border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0, 36, 14, .16);
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
     /* animation: flash-shadow-img 2s infinite; */
     z-index: 2;
@@ -36,13 +49,15 @@
 }
 
 .img_small {
-    height: auto;
-    width: 28%;
+    width: 27%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
     /* animation: flash-shadow-img 2s infinite; */
     transform: scale(1);
     opacity: 1;
     border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 36, 14, .10);
     z-index: 1;
 
     transition: all 2s ease-in-out;
@@ -75,26 +90,30 @@
 
 .moi_desc3 {
     color: #725627;
-    text-align: justify;
-    text-indent: 30px;
-    font-size: 14px;
-    width: 80%;
-    margin: 24px auto;
+    text-align: left;
+    text-indent: 28px;
+    font-size: 14.5px;
+    width: 84%;
+    max-width: 520px;
+    margin: 26px 0 0;
     font-style: italic;
-    line-height: 18px;
+    line-height: 26px;
+    hyphens: none;
+    overflow-wrap: break-word;
 }
 
 
 
 /* comfirm.......................................................................................... */
 .cf_container {
-    margin-top: 30px;
+    margin-top: 56px;
     box-shadow: 0 5px 20px rgba(225, 237, 235, 0.648);
-    padding: 20px;
+    padding: 30px 24px 26px;
     text-align: center;
-    width: 80%;
+    width: 84%;
+    max-width: 460px;
     border-radius: 16px;
-    margin-bottom: 100px;
+    margin-bottom: 72px;
 
     background-color: rgb(242, 251, 251);
 }
@@ -137,49 +156,57 @@ animation: flash-shadow 2s infinite;
 .cf_desc1 {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 18px;
-    
+    font-size: 19px;
+    letter-spacing: 1.5px;
 }
 
 .cf_desc2 {
     text-transform: uppercase;
-    font-size: 16px;
-    
+    font-size: 15px;
+    letter-spacing: 1px;
 }
 
 .cf_desc3 {
     font-weight: bold;
     letter-spacing: 3px;
-    font-size: 16px;
+    font-size: 20px;
+    margin-top: 10px !important;
 }
 
 .cf_desc4 {
-    color: #333;
-    font-size: 14px;
+    color: #555;
+    font-size: 13.5px;
     font-style: italic;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 
 .cf_btn {
     border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    width: 60%;
-    margin: 8px 0;
+    padding: 14px 18px;
+    border-radius: 10px;
+    width: 76%;
+    max-width: 280px;
+    margin: 7px 0;
     cursor: pointer;
-    box-shadow: 0 5px 6px 2px rgba(174, 174, 174, 0.4);
+    box-shadow: 0 4px 10px rgba(174, 174, 174, 0.35);
     background-color: #e0edec;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: .3px;
+    transition: background-color .25s ease, box-shadow .25s ease, transform .15s ease;
 }
 
 .cf_btn:hover {
     background-color: #ccd4d3;
-    box-shadow: 0 5px 6px 0 rgba(120, 120, 120, 0.4);
-    font-size: 13.8px;
+    box-shadow: 0 6px 14px rgba(120, 120, 120, 0.35);
+}
+
+.cf_btn:active {
+    transform: translateY(1px);
 }
 
 .cf_btn > a {
+    display: block;
     text-decoration: none;
     color: black;
 }
@@ -321,35 +348,47 @@ animation: flash-shadow 2s infinite;
     width: 100%;
     display: flex;
     align-items: center;
+    margin-top: 8px;
+    margin-bottom: 18px;
 }
 
 .album_header span {
     font-family: 'Alex Brush', cursive;
-    font-size: 24px;
+    font-size: 28px;
     color: #555;
     white-space: nowrap;
-    margin-left: 8px;
+    margin-left: 14px;
 }
 
 .line {
     flex: 1;
-    height: 1.5px;
-    background-color: #858585;
-    margin-left: 4px;
-    margin-right: 4px;
+    height: 1px;
+    background-color: #b9b9b9;
+    margin-left: 12px;
+    margin-right: 14px;
 }
 
 .album_container {
-    column-count: 2;
-    column-gap: 1.5%; /* Khoảng cách giữa 2 cột */
-    padding: 8px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 12px;
 }
 
 .album_container > img {
     width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     display: block;
-    margin-bottom: 3%;
+    border-radius: 10px;
     transition: all 2s ease-in-out;
+}
+
+/* Anh le cuoi cung: trai rong ca hang cho khong bi trong nua ben */
+.album_container > img:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    aspect-ratio: 3 / 2;
 }
 
 .album_left {
@@ -365,7 +404,8 @@ animation: flash-shadow 2s infinite;
 /* thank................................................................................... */
 
 .thank_container {
-    height: 100vh;
+    height: 100svh;
+    margin-top: 56px;
     width: 100%;
     background-image: url(./source/doc/nen_cuoi.jpg);
     position: relative;
@@ -387,8 +427,8 @@ animation: flash-shadow 2s infinite;
 }
 
 .thank_desc {
-    line-height: 30px;
-    padding-bottom: 24px;
+    line-height: 1.5;
+    padding: 8px 16px 26px;
     background-color: rgba(236, 236, 236, 0.322);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
@@ -399,9 +439,8 @@ animation: flash-shadow 2s infinite;
     font-family: "Alex Brush", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: clamp(27px, 7.5vw, 34px);
     text-shadow: 0 0 20px rgb(0, 0, 0);
-
 }
 
 .thank_desc {
@@ -421,7 +460,7 @@ animation: flash-shadow 2s infinite;
     bottom: 0;
     display: flex;
     justify-content: center;
-    color: #5555557a;
+    color: #ffffffb0;
     font-style: italic;
     text-align: center;
     padding: 10px;
@@ -444,4 +483,38 @@ animation: flash-shadow 2s infinite;
     background-color: rgba(255, 255, 255, 0.35);
     transform: scale(1.1);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Man hinh lon: gian rong hon mot chut ................................. */
+@media (min-width: 560px) {
+    .album_container {
+        gap: 14px;
+        padding: 0 18px;
+    }
+
+    .gt_img {
+        width: 78%;
+    }
+
+    .moi_desc3 {
+        font-size: 15.5px;
+        line-height: 28px;
+    }
+}
+
+/* Ton trong nguoi dung tat hieu ung chuyen dong ......................... */
+@media (prefers-reduced-motion: reduce) {
+    .thiep::before,
+    .nhay-shadow {
+        animation: none;
+    }
+
+    .gt_img,
+    .cf_container,
+    .thank_desc,
+    .album_container > img,
+    .img_small,
+    .img_big {
+        transition-duration: .01ms;
+    }
 }
