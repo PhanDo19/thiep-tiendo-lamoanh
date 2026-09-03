@@ -308,28 +308,30 @@ animation: flash-shadow 2s infinite;
     max-width: 700px;
 }
 
+/* popup la flex-column de chua ca the QR lan cham chi bao */
+.popup.show {
+    flex-direction: column;
+}
+
 .popup.show {
     display: flex;
 }
 
 .popup_container {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
     scroll-snap-type: x mandatory;
-    padding: 0 50px;
-    scroll-padding: 50px;
+    padding: 0 26px;
+    gap: 16px;
     border-radius: 8px;
-    /* gap: 12px; */
-
-    /* background-color: #858585; */
     scroll-behavior: smooth;
-
 }
 
 .popup_item {
+    /* container da co padding nen content box vua dung mot the */
     flex: 0 0 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -354,17 +356,51 @@ animation: flash-shadow 2s infinite;
 
 @media (min-width: 440px) {
     .popup_container {
-        width: 100%;
-        padding: 0 80px;
-        scroll-padding: 80px;
-        border-radius: 8px;
-        /* gap: 12px; */
+        padding: 0 60px;
+    }
+
+    .popup_item {
+        flex: 0 0 100%;
     }
 }
   
 
 /* transform: translateX(60px) */
 /* transform: translateX(-60px) */
+
+.popup_hint {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, .88);
+    font-size: 12.5px;
+    letter-spacing: .3px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+    pointer-events: none;
+}
+
+.popup_dots {
+    display: flex;
+    gap: 6px;
+}
+
+.popup_dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .40);
+    transition: background-color .25s ease, transform .25s ease;
+}
+
+.popup_dot.active {
+    background-color: #fff;
+    transform: scale(1.18);
+}
 
 .popup_label {
     color: #fff;

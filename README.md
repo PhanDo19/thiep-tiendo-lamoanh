@@ -102,7 +102,7 @@ git commit -m "Cập nhật nội dung"
 git push
 ```
 
-Nếu trang chưa đổi sau ~1 phút: bấm Ctrl+Shift+R, hoặc tăng số `?v=27.0`
+Nếu trang chưa đổi sau ~1 phút: bấm Ctrl+Shift+R, hoặc tăng số `?v=28.0`
 trong `<head>` của cả hai file.
 
 ## 📝 Phụ lục: cách tạo thêm Google Form

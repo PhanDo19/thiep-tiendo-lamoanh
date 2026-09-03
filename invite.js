@@ -43,8 +43,9 @@ pop_up_item2.addEventListener('click', function (event) {
   event.stopPropagation();
 });
 
-// Xử lý kích thước pop up
+// Thẻ nào đang ở giữa thì rõ nét, thẻ bên cạnh mờ và nhỏ lại
 const items = document.querySelectorAll('.popup_item');
+const dots = document.querySelectorAll('.popup_dot');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -52,6 +53,12 @@ const observer = new IntersectionObserver((entries) => {
     const value = 0.8 + 0.2 * ratio;
     entry.target.style.opacity = value.toFixed(2);
     entry.target.style.transform = `scale(${value.toFixed(2)})`;
+
+    // Chấm chỉ báo chạy theo thẻ đang xem
+    if (ratio > 0.6) {
+      const index = Array.prototype.indexOf.call(items, entry.target);
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
   });
 }, {
   root: document.querySelector('.popup_container'),
@@ -59,6 +66,12 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 items.forEach(item => observer.observe(item));
+
+// Mở pop-up thì luôn bắt đầu từ thẻ đầu tiên
+btn_qr.addEventListener('click', () => {
+  const container = document.querySelector('.popup_container');
+  if (container) container.scrollLeft = 0;
+});
 
 // Copy số tài khoản
 function showToast() {
