@@ -104,6 +104,36 @@ hiện ảnh khi share.
 > Nếu muốn tự động biết khách xem trang nào, có thể tạo **2 form riêng** cho nhà trai
 > và nhà gái thay vì dùng câu hỏi "Bạn là khách mời của?".
 
+## 🌐 Deploy lên GitHub Pages
+
+Website: **https://hoangnv25.github.io/thiep-tiendo-lamoanh/**
+
+| Trang | Link gửi khách |
+|---|---|
+| Nhà trai | https://hoangnv25.github.io/thiep-tiendo-lamoanh/ |
+| Nhà gái | https://hoangnv25.github.io/thiep-tiendo-lamoanh/nhagai.html |
+
+### Bật GitHub Pages (làm 1 lần)
+
+1. Vào repo trên GitHub → tab **Settings**
+2. Menu trái → **Pages**
+3. Mục **Source** chọn **Deploy from a branch**
+4. Branch chọn **main**, thư mục **/ (root)** → **Save**
+5. Đợi 1-2 phút, tải lại trang Settings → Pages sẽ hiện link
+
+### Cập nhật nội dung sau này
+
+```bash
+git add -A
+git commit -m "Cập nhật thông tin"
+git push
+```
+
+Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
+
+> Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
+> hoặc tăng số `?v=21.0` trong `<head>` của cả hai file.
+
 ## 🚀 Chạy thử ở máy
 
 ```bash
