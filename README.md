@@ -51,49 +51,61 @@ Gia đình nhà trai — Xóm Trung, Thôn Quang Trung, Xã Tân Minh, Tỉnh Ni
 > Tấm thiệp đầu trang hiện ngày **lễ chính 20/09**. Cả hai mốc ghi đầy đủ ở
 > khối "Xác nhận tham dự" bên dưới.
 
-## ⚠️ Việc còn phải làm
+## ✅ Tình trạng
 
-Các mục dưới đây đang để trống, **phải điền trước khi gửi thiệp cho khách**.
+Mọi nội dung đã điền xong, trang sẵn sàng gửi khách.
 
-### 1. ~~Mã QR chuyển khoản~~ ✅ Đã xong
+| Mục | Trạng thái |
+|---|---|
+| Ảnh cưới, album | ✅ |
+| Mã QR chuyển khoản | ✅ Chú rể (VietinBank) · Cô dâu (TPBank) |
+| Link Google Maps | ✅ Nhà trai · Nhà gái |
+| Form xác nhận tham dự | ✅ Hai form riêng |
+| Domain / OG meta | ✅ |
 
-| | Ngân hàng | Chủ tài khoản | Số tài khoản |
+### Số tài khoản
+
+| | Ngân hàng | Chủ tài khoản | Số |
 |---|---|---|---|
 | Chú rể | VietinBank | PHAN TIEN DO | `0886505360` (alias) |
 | Cô dâu | TPBank | HOANG THI LAM OANH | `0432 5948 801` |
 
-Nút copy dán ra số liền không khoảng trắng để dán thẳng vào app ngân hàng.
-
-### 2. ~~Link Google Maps~~ ✅ Đã xong
+### Toạ độ địa điểm
 
 | Nơi | Toạ độ |
 |---|---|
 | Nhà trai | `20.4243289, 105.9768309` |
 | Nhà gái | `20.3812027, 105.9302444` |
 
-Link dùng dạng chỉ đường (`maps/dir/?api=1&destination=...`) nên khách bấm là
-Google Maps dẫn đường luôn từ vị trí của họ.
+Link dùng dạng `maps/dir/?api=1&destination=...` nên khách bấm là Google Maps
+dẫn đường luôn. Nút bản đồ có ở 3 chỗ mỗi trang: nút tròn trên thiệp và nút
+"📍 Xem đường đi" trong từng khối sự kiện.
 
-Nút bản đồ có ở 3 chỗ mỗi trang: nút tròn trên thiệp (trỏ nhà trai — nơi tổ
-chức Lễ Thành Hôn) và nút "📍 Xem đường đi" trong từng khối sự kiện.
+### Form xác nhận tham dự
 
+Hai form riêng để biết khách đến từ bên nào:
 
-### 3. Form xác nhận tham dự
-Xem hướng dẫn ở mục dưới, rồi thay `href="#"` trong nút **"Xác nhận tham dự"**
-(ở cả hai file) bằng link form.
+- Nhà trai: `1FAIpQLSd4aMV6ymKq5KezFB_mSiVCJpA3ELUONMSkjg3-FMiK5YOwGQ`
+- Nhà gái: `1FAIpQLSeVdXqrBWluxsba03HipQu9e9uHfQX7mkbgZos259xc4da5Cw`
 
-### 4. Domain
-Sau khi deploy, điền `og:url` và `og:image` trong `<head>` của cả hai file:
+Xem phản hồi: mở form → tab **Câu trả lời** → bấm biểu tượng Sheets màu xanh
+để xuất ra Google Trang tính.
 
-```html
-<meta property="og:image" content="https://tenmien-cua-ban.vn/source/meta.jpg" />
-<meta property="og:url" content="https://tenmien-cua-ban.vn" />
+### Muốn sửa nội dung sau này
+
+Sửa ở **cả hai file** `index.html` và `nhagai.html`, trừ những chỗ vốn khác nhau
+(giờ tiệc, địa điểm tiệc, link form, link bản đồ nhà gái). Sau khi sửa:
+
+```bash
+git add -A
+git commit -m "Cập nhật nội dung"
+git push
 ```
 
-`og:image` **bắt buộc là URL đầy đủ** (`https://...`), đường dẫn tương đối sẽ không
-hiện ảnh khi share.
+Nếu trang chưa đổi sau ~1 phút: bấm Ctrl+Shift+R, hoặc tăng số `?v=27.0`
+trong `<head>` của cả hai file.
 
-## 📝 Hướng dẫn tạo Form xác nhận tham dự
+## 📝 Phụ lục: cách tạo thêm Google Form
 
 1. Vào [forms.google.com](https://forms.google.com) → **Trống** (dấu +)
 2. Đặt tên: *Xác nhận tham dự Lễ cưới Tiến Độ & Lâm Oanh*
