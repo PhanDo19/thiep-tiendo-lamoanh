@@ -132,7 +132,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=22.0` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=22.1` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 

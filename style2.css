@@ -36,8 +36,7 @@
 
 .img_big {
     width: 36%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+    height: auto;
     border-radius: 18px;
     box-shadow: 0 10px 26px rgba(0, 36, 14, .16);
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
@@ -50,8 +49,7 @@
 
 .img_small {
     width: 27%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+    height: auto;
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
     /* animation: flash-shadow-img 2s infinite; */
     transform: scale(1);
@@ -372,23 +370,24 @@ animation: flash-shadow 2s infinite;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 10px;
     padding: 0 12px;
 }
 
 .album_container > img {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    height: auto;          /* giu dung ty le goc, khong cat anh */
     display: block;
     border-radius: 10px;
     transition: all 2s ease-in-out;
 }
 
-/* Anh le cuoi cung: trai rong ca hang cho khong bi trong nua ben */
+/* Anh le cuoi cung: can giua, rong bang mot cot */
 .album_container > img:last-child:nth-child(odd) {
     grid-column: 1 / -1;
-    aspect-ratio: 3 / 2;
+    justify-self: center;
+    width: calc(50% - 5px);
 }
 
 .album_left {
@@ -490,6 +489,10 @@ animation: flash-shadow 2s infinite;
     .album_container {
         gap: 14px;
         padding: 0 18px;
+    }
+
+    .album_container > img:last-child:nth-child(odd) {
+        width: calc(50% - 7px);
     }
 
     .gt_img {
