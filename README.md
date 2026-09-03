@@ -15,8 +15,10 @@ wedding/
 ├── source/             # Assets
 │   ├── chure.jpg       # Ảnh chú rể (phần Giới thiệu)
 │   ├── codau.jpg       # Ảnh cô dâu (phần Giới thiệu)
-│   ├── qr-chure.jpg    # QR chuyển khoản chú rể (VietinBank)
-│   ├── qr-codau.jpg    # QR chuyển khoản cô dâu  ⚠ CHƯA CÓ
+│   ├── qr-chure.jpg    # QR chú rể (VietinBank - PHAN TIEN DO)
+│   ├── qr-codau.jpg    # QR cô dâu (TPBank - HOANG THI LAM OANH)
+│   ├── banner-form-1600x400.jpg    # Ảnh bìa cho Google Form
+│   ├── banner-vuong-1600x900.jpg   # Ảnh 16:9
 │   ├── album/          # 01.jpg → 09.jpg - album ảnh cưới
 │   ├── doc/
 │   │   ├── back_thiep.jpg   # Nền thiệp (đầu trang)
@@ -53,26 +55,14 @@ Gia đình nhà trai — Xóm Trung, Thôn Quang Trung, Xã Tân Minh, Tỉnh Ni
 
 Các mục dưới đây đang để trống, **phải điền trước khi gửi thiệp cho khách**.
 
-### 1. Mã QR cô dâu
-Còn thiếu `source/qr-codau.jpg`. Lấy ảnh QR như sau:
+### 1. ~~Mã QR chuyển khoản~~ ✅ Đã xong
 
-1. Mở app ngân hàng của cô dâu
-2. Tìm mục **Nhận tiền** / **QR của tôi** / **Mã QR nhận tiền**
-3. Lưu ảnh về máy, đổi tên thành `qr-codau.jpg`, copy vào thư mục `source/`
-4. Mở **cả hai** file `index.html` và `nhagai.html`, tìm `copy_chi` rồi điền
-   số tài khoản vào `data-copy` và sửa chữ trên nút:
+| | Ngân hàng | Chủ tài khoản | Số tài khoản |
+|---|---|---|---|
+| Chú rể | VietinBank | PHAN TIEN DO | `0886505360` (alias) |
+| Cô dâu | TPBank | HOANG THI LAM OANH | `0432 5948 801` |
 
-```html
-<button class="copy copy_chi font_tnr" data-copy="0987654321">
-    Sao chép số 0987654321
-</button>
-```
-
-> Nút để trống `data-copy=""` sẽ tự động mờ đi và không bấm được, nên trang
-> không lỗi khi chưa điền — nhưng khách cũng không mừng cưới cô dâu được.
-
-Nếu app không có sẵn ảnh QR, tạo tại [vietqr.io](https://vietqr.io): chọn ngân
-hàng, nhập số tài khoản và tên chủ tài khoản, tải ảnh về.
+Nút copy dán ra số liền không khoảng trắng để dán thẳng vào app ngân hàng.
 
 ### 2. ~~Link Google Maps~~ ✅ Đã xong
 
@@ -87,14 +77,12 @@ Google Maps dẫn đường luôn từ vị trí của họ.
 Nút bản đồ có ở 3 chỗ mỗi trang: nút tròn trên thiệp (trỏ nhà trai — nơi tổ
 chức Lễ Thành Hôn) và nút "📍 Xem đường đi" trong từng khối sự kiện.
 
-### 3. Số tài khoản
-Chú rể đã xong (`0886505360` — VietinBank, PHAN TIEN DO). Cô dâu xem mục 1.
 
-### 4. Form xác nhận tham dự
+### 3. Form xác nhận tham dự
 Xem hướng dẫn ở mục dưới, rồi thay `href="#"` trong nút **"Xác nhận tham dự"**
 (ở cả hai file) bằng link form.
 
-### 5. Domain
+### 4. Domain
 Sau khi deploy, điền `og:url` và `og:image` trong `<head>` của cả hai file:
 
 ```html
@@ -155,7 +143,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=25.0` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=26.0` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 
