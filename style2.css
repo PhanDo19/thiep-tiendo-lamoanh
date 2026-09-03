@@ -230,11 +230,15 @@ animation: flash-shadow 2s infinite;
 /* pop_up........................... */
 .popup {
     position: fixed;
+    inset: 0;
+    margin: auto;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: none;
     z-index: 3;
-    background-color: #55555570;
+    background-color: rgba(20, 20, 20, .62);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     align-items: center;
     justify-content: center;
     max-width: 700px;
@@ -262,10 +266,10 @@ animation: flash-shadow 2s infinite;
 .popup_item {
     flex: 0 0 100%;
     scroll-snap-align: start;
-    /* max-width: 85%; */
     position: relative;
-    
-    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .popup_item {
@@ -279,8 +283,9 @@ animation: flash-shadow 2s infinite;
 .popup_item > img {
     border-radius: 18px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 74vh;
+    object-fit: contain;   /* khong cat mat phan nao cua ma QR */
 }
 
 @media (min-width: 440px) {
@@ -297,15 +302,45 @@ animation: flash-shadow 2s infinite;
 /* transform: translateX(60px) */
 /* transform: translateX(-60px) */
 
+.popup_label {
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: .5px;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+}
+
 .copy {
-    position: absolute;
-    top: 23%;
-    left: 63%;
-    width: 8%;
-    height: 6%;
-    /* background-color: rgba(255, 0, 0, 0.312); */
-    z-index: 4; /* đảm bảo nổi lên trên */
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1b3a33;
+    font-size: 15px;
+    letter-spacing: .3px;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+    transition: background-color .2s ease, transform .12s ease;
+    z-index: 4;
+}
+
+.copy:hover {
+    background-color: #e6f1ef;
+}
+
+.copy:active {
+    transform: translateY(1px);
+}
+
+/* Nut chua co so tai khoan thi lam mo di, khong bam duoc */
+.copy[data-copy=""] {
+    opacity: .45;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 #copy-toast {

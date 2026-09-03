@@ -15,8 +15,8 @@ wedding/
 ├── source/             # Assets
 │   ├── chure.jpg       # Ảnh chú rể (phần Giới thiệu)
 │   ├── codau.jpg       # Ảnh cô dâu (phần Giới thiệu)
-│   ├── qr-chure.svg    # QR chuyển khoản chú rể  ⚠ CHƯA THAY
-│   ├── qr-codau.svg    # QR chuyển khoản cô dâu  ⚠ CHƯA THAY
+│   ├── qr-chure.jpg    # QR chuyển khoản chú rể (VietinBank)
+│   ├── qr-codau.jpg    # QR chuyển khoản cô dâu  ⚠ CHƯA CÓ
 │   ├── album/          # 01.jpg → 09.jpg - album ảnh cưới
 │   ├── doc/
 │   │   ├── back_thiep.jpg   # Nền thiệp (đầu trang)
@@ -43,11 +43,26 @@ wedding/
 
 Các mục dưới đây đang để trống, **phải điền trước khi gửi thiệp cho khách**.
 
-### 1. Mã QR chuyển khoản
-`source/qr-chure.svg` và `source/qr-codau.svg` **vẫn là QR của cặp đôi cũ** — bắt buộc
-phải thay. Tạo QR miễn phí tại [vietqr.io](https://vietqr.io): chọn ngân hàng, nhập số
-tài khoản, tải ảnh về. Lưu đè đúng tên trên (có thể dùng `.jpg`/`.png`, nhớ sửa `src`
-trong cả hai file HTML).
+### 1. Mã QR cô dâu
+Còn thiếu `source/qr-codau.jpg`. Lấy ảnh QR như sau:
+
+1. Mở app ngân hàng của cô dâu
+2. Tìm mục **Nhận tiền** / **QR của tôi** / **Mã QR nhận tiền**
+3. Lưu ảnh về máy, đổi tên thành `qr-codau.jpg`, copy vào thư mục `source/`
+4. Mở **cả hai** file `index.html` và `nhagai.html`, tìm `copy_chi` rồi điền
+   số tài khoản vào `data-copy` và sửa chữ trên nút:
+
+```html
+<button class="copy copy_chi font_tnr" data-copy="0987654321">
+    Sao chép số 0987654321
+</button>
+```
+
+> Nút để trống `data-copy=""` sẽ tự động mờ đi và không bấm được, nên trang
+> không lỗi khi chưa điền — nhưng khách cũng không mừng cưới cô dâu được.
+
+Nếu app không có sẵn ảnh QR, tạo tại [vietqr.io](https://vietqr.io): chọn ngân
+hàng, nhập số tài khoản và tên chủ tài khoản, tải ảnh về.
 
 ### 2. Link Google Maps
 Trong **cả hai file**, tìm `class="thiep_map"` và thay `href="#"`:
@@ -60,12 +75,7 @@ Lấy link: mở Google Maps → tìm địa chỉ → **Chia sẻ** → **Sao c
 Hai file dùng **hai link khác nhau** (nhà trai / nhà gái).
 
 ### 3. Số tài khoản
-Điền STK vào `data-copy` (ở cả hai file) để nút bấm copy hoạt động:
-
-```html
-<div class="copy copy_anh" data-copy="0123456789"></div>
-<div class="copy copy_chi" data-copy="9876543210"></div>
-```
+Chú rể đã xong (`0886505360` — VietinBank, PHAN TIEN DO). Cô dâu xem mục 1.
 
 ### 4. Form xác nhận tham dự
 Xem hướng dẫn ở mục dưới, rồi thay `href="#"` trong nút **"Xác nhận tham dự"**
@@ -132,7 +142,7 @@ git push
 Đợi ~1 phút là trang tự cập nhật. Xem tiến trình ở tab **Actions** của repo.
 
 > Nếu sửa xong mà trang chưa đổi: bấm Ctrl+Shift+R để xoá cache trình duyệt,
-> hoặc tăng số `?v=22.1` trong `<head>` của cả hai file.
+> hoặc tăng số `?v=23.0` trong `<head>` của cả hai file.
 
 ## 🚀 Chạy thử ở máy
 

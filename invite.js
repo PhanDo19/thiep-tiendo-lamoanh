@@ -70,13 +70,27 @@ function showToast() {
 }
 
 document.querySelectorAll('.copy').forEach(copyBtn => {
-  copyBtn.addEventListener('click', function () {
+  copyBtn.addEventListener('click', function (event) {
+    event.stopPropagation(); // bấm nút không làm đóng pop-up
     const text = this.dataset.copy;
-    if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
-      showToast();
-    }).catch(err => {
-      console.error('Copy thất bại: ', err);
+    if (!text) return;       // chưa điền số tài khoản thì bỏ qua
+
+    navigator.clipboard.writeText(text).then(showToast).catch(() => {
+      // Trình duyệt cũ hoặc trang mở qua file:// thì dùng cách dự phòng
+      const tmp = document.createElement('textarea');
+      tmp.value = text;
+      tmp.setAttribute('readonly', '');
+      tmp.style.position = 'fixed';
+      tmp.style.opacity = '0';
+      document.body.appendChild(tmp);
+      tmp.select();
+      try {
+        document.execCommand('copy');
+        showToast();
+      } catch (err) {
+        console.error('Copy thất bại: ', err);
+      }
+      document.body.removeChild(tmp);
     });
   });
 });
