@@ -350,7 +350,7 @@ animation: flash-shadow 2s infinite;
     border-radius: 18px;
     width: 100%;
     height: auto;
-    max-height: 74vh;
+    max-height: 68dvh;
     object-fit: contain;   /* khong cat mat phan nao cua ma QR */
 }
 
@@ -402,14 +402,6 @@ animation: flash-shadow 2s infinite;
     transform: scale(1.18);
 }
 
-.popup_label {
-    color: #fff;
-    text-align: center;
-    font-size: 17px;
-    letter-spacing: .5px;
-    margin-bottom: 12px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
-}
 
 .copy {
     display: block;
