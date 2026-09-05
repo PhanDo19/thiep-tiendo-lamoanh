@@ -114,6 +114,7 @@ body {
     animation: zoomInOut 10s ease-in-out infinite;
     z-index: 0;
     transform-origin: center;
+    will-change: transform;
 }
 
 .thiep_blur-bg {
