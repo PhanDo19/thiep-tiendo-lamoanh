@@ -20,6 +20,7 @@ wedding/
 │   ├── banner-form-1600x400.jpg    # Ảnh bìa cho Google Form
 │   ├── banner-vuong-1600x900.jpg   # Ảnh 16:9
 │   ├── album/          # 01.jpg → 09.jpg - album ảnh cưới
+│   │                   # bấm vào ảnh sẽ phóng to toàn màn hình
 │   ├── doc/
 │   │   ├── back_thiep.jpg   # Nền thiệp (đầu trang)
 │   │   ├── nen_cuoi.jpg     # Nền phần "Rất hân hạnh"
@@ -102,7 +103,7 @@ git commit -m "Cập nhật nội dung"
 git push
 ```
 
-Nếu trang chưa đổi sau ~1 phút: bấm Ctrl+Shift+R, hoặc tăng số `?v=30.0`
+Nếu trang chưa đổi sau ~1 phút: bấm Ctrl+Shift+R, hoặc tăng số `?v=31.0`
 trong `<head>` của cả hai file.
 
 ## 📝 Phụ lục: cách tạo thêm Google Form

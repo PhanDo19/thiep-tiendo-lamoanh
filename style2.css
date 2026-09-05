@@ -648,3 +648,108 @@ animation: flash-shadow 2s infinite;
         transition-duration: .01ms;
     }
 }
+
+
+/* Xem anh phong to ..................................................... */
+
+.album_container > img {
+    cursor: zoom-in;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0b0b;
+    /* chua thanh dieu huong tren dien thoai */
+    padding: max(16px, env(safe-area-inset-top)) 16px
+             max(16px, env(safe-area-inset-bottom));
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lb_img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    /* anh moi doi thi hien dan ra */
+    animation: lbFade .25s ease;
+}
+
+@keyframes lbFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.lb_close {
+    position: absolute;
+    top: max(10px, env(safe-area-inset-top));
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .14);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.lb_nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 64px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .12);
+    color: #fff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.lb_prev { left: 8px; }
+.lb_next { right: 8px; }
+
+.lb_close:hover,
+.lb_nav:hover {
+    background-color: rgba(255, 255, 255, .28);
+}
+
+.lb_count {
+    position: absolute;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, .85);
+    font-size: 14px;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+/* Man hinh nho: nut dieu huong nho lai cho do che anh */
+@media (max-width: 420px) {
+    .lb_nav {
+        width: 38px;
+        height: 56px;
+        font-size: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lb_img {
+        animation: none;
+    }
+}
