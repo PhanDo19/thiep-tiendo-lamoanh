@@ -273,6 +273,24 @@ animation: flash-shadow 2s infinite;
     color: black;
 }
 
+/* Nut chinh: xac nhan tham du - hanh dong quan trong nhat */
+.cf_btn_main {
+    background-color: #2f5d52;
+    box-shadow: 0 5px 14px rgba(47, 93, 82, .32);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .6px;
+}
+
+.cf_btn_main > a {
+    color: #fff;
+}
+
+.cf_btn_main:hover {
+    background-color: #24493f;
+    box-shadow: 0 7px 18px rgba(47, 93, 82, .42);
+}
+
 /* .cf_icon {
     display: block;
     margin-top: 12px !important;
